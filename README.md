@@ -2,19 +2,17 @@
 
 ## Overview
 
-UberEats Restaurant Scraper is a Flask-based web application that automates the extraction of restaurant information and menu data from UberEats using SeleniumBase. The application provides a simple and user-friendly interface for searching restaurants, extracting menu details, and organizing the collected data efficiently.
+UberEats Restaurant Scraper is a Flask-based web application that automates the extraction of restaurant information and menu data from UberEats using SeleniumBase. The application extracts structured restaurant details, menu items, and JSON data efficiently.
 
 ## Features
 
-- Search UberEats restaurants
-- Extract restaurant details
+- Extract UberEats restaurant details
 - Scrape menu items
-- Export scraped data
-- User-friendly Flask web interface
-- Organized project structure
-- Easy to install and run
-
----
+- Extract structured JSON data
+- Scrape DoorDash restaurant data
+- Export scraped data into JSON format
+- Flask-based API interface
+- Organized and reusable scraper modules
 
 ## Technologies Used
 
@@ -22,41 +20,26 @@ UberEats Restaurant Scraper is a Flask-based web application that automates the 
 - Flask
 - SeleniumBase
 - Selenium
+- JSON
 - HTML
 - CSS
-
----
 
 ## Project Structure
 
 ```text
 UberEats-Restaurant-Scraper/
 │
-├── app.py
+├── ubereats.py
+├── extract_json.py
+├── doordash.py
+├── doordash_roma.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
 │
-├── templates/
-│   ├── index.html
-│   └── results.html
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── data/
-│   ├── restaurant_details/
-│   ├── menu_data/
-│   └── output/
-│
-├── screenshots/
-│   ├── home.png
-│   ├── search_results.png
-│   └── menu.png
-│
-└── sample_video.mp4
+├── restaurant_detail.json
+├── ubereats_menu_18344.json
+└── ubereats_menu_18345.json
 ```
 
 ## Installation
@@ -82,44 +65,37 @@ pip install -r requirements.txt
 ### 4. Run the application
 
 ```bash
-python app.py
+python ubereats.py
 ```
 
-## Screenshots
+The Flask application will start at:
 
-Store application screenshots inside the `screenshots` folder.
-
-Example screenshots:
-
-- Home Page
-- Search Results
-- Restaurant Details
-- Menu Items
-
-
-## Demo
-
-A sample demonstration video of the project is available in the repository:
-
+```text
+http://127.0.0.1:5000
 ```
-sample_video.mp4
-```
+
+## Output Files
+
+The scraper generates structured JSON files containing extracted data:
+
+- `restaurant_detail.json`
+- `ubereats_menu_18344.json`
+- `ubereats_menu_18345.json`
 
 ## Future Improvements
 
 - Export data to Excel and CSV
 - Improve scraping performance
 - Add advanced filtering options
-- Enhance the user interface
+- Enhance API functionality
 - Improve error handling and logging
 - Support additional food delivery platforms
-
 
 ## License
 
 This project is intended for educational and portfolio purposes only.
 
-
 ## Author
 
-**Damala Amulya**
+Damala Amulya
+GitHub: https://github.com/Damalaamulya
